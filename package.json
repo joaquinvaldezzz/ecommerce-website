@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "postcss --env 'production' ./src/styles/main.css --dir ./dist",
+    "format": "prettier --write .",
+    "watch": "postcss ./src/styles/main.css --dir ./dist --watch"
+  },
+  "browserslist": {
+    "development": [
+      "> 0.5%"
+    ],
+    "production": [
+      ">= 1%",
+      "last 1 major version",
+      "not dead",
+      "Chrome >= 45",
+      "Firefox >= 38",
+      "Edge >= 12",
+      "Explorer >= 10",
+      "iOS >= 9",
+      "Safari >= 9",
+      "Android >= 4.4",
+      "Opera >= 30"
+    ]
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.13",
+    "tailwindcss": "^3.2.4"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "@prettier/plugin-php": "^0.19.2",
+    "@prettier/plugin-xml": "^2.2.0",
+    "cssnano": "^5.1.14",
+    "postcss": "^8.4.19",
+    "postcss-cli": "^10.1.0",
+    "postcss-sort-media-queries": "^4.3.0",
+    "prettier": "^2.8.0",
+    "prettier-plugin-tailwindcss": "^0.2.0"
+  }
+}
