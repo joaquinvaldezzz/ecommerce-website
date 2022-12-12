@@ -12,8 +12,8 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'sign-in': "url('public/images/banner/banner-sign-in.jpg')",
-        'create-an-account': "url('public/images/banner/banner-create-an-account.jpg')",
+        'sign-in': "url('../public/images/banner/banner-sign-in.jpg')",
+        'create-an-account': "url('../public/images/banner/banner-create-an-account.jpg')",
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
