@@ -12,6 +12,7 @@ module.exports = {
     },
     autoprefixer: {},
     cssnano: process.env.NODE_ENV === 'production' && {},
+    'postcss-import': {},
     'postcss-sort-media-queries': {},
     tailwindcss: {},
   },
