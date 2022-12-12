@@ -1,8 +1,9 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const contents = require('./contents')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./*.php', './*.html', './includes/**/*.{php,html}'],
+  content: [...contents],
   theme: {
     container: {
       center: true,
