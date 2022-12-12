@@ -5,10 +5,10 @@
     "build:css": "postcss --env 'production' ./src/styles/main.css --dir ./dist",
     "build:js": "babel ./src/scripts --out-file ./dist/app.js --presets minify",
     "format": "prettier --write .",
+    "lint": "eslint .",
     "watch": "concurrently \"npm run watch:css\" \"npm run watch:js\"",
     "watch:css": "postcss ./src/styles/main.css --dir ./dist --watch",
-    "watch:js": "babel ./src/scripts --out-file ./dist/app.js --watch",
-    "lint": "eslint ."
+    "watch:js": "babel ./src/scripts --out-file ./dist/app.js --watch"
   },
   "browserslist": {
     "development": [
