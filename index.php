@@ -8,5 +8,7 @@
     <link rel="icon" href="public/favicon.svg" />
   </head>
 
-  <body class="min-h-screen bg-white text-slate-900 antialiased"></body>
+  <body class="min-h-screen bg-white text-slate-900 antialiased">
+    <?php include 'includes/header.php'; ?>
+  </body>
 </html>
