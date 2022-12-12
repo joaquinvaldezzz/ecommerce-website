@@ -8,5 +8,5 @@
     <link rel="icon" href="public/favicon.svg" />
   </head>
 
-  <body></body>
+  <body class="min-h-screen bg-white text-slate-900 antialiased"></body>
 </html>
