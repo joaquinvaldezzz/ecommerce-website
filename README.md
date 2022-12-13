@@ -45,3 +45,23 @@ This project uses PHP and [Tailwind CSS](https://tailwindcss.com). To run this r
    ```shell
    npm run watch
    ```
+
+## Creating Database
+
+1. Create a database
+
+   ```sql
+   CREATE DATABASE ecommerce;
+   ```
+
+2. Create a table within that database
+
+   ```sql
+   CREATE TABLE
+     user_accounts (
+       id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+       email_address VARCHAR(256) NOT NULL,
+       password VARCHAR(256) NOT NULL,
+       date_created DATETIME NOT NULL
+     );
+   ```
