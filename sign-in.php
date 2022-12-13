@@ -73,7 +73,7 @@
 
                 $login_query = mysqli_query(
                   $mysqli,
-                  "SELECT * FROM user_accounts WHERE email_address = '$email_address' AND password = '$password'"
+                  "SELECT * FROM `user_accounts` WHERE `email_address` = '$email_address' AND `password` = '$password'"
                 );
 
                 $result = mysqli_fetch_array($login_query);
