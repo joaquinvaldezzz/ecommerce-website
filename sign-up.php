@@ -30,7 +30,7 @@
               Create an account
             </h1>
 
-            <form class="mt-6 space-y-6" action="success-sign-up.php" method="post">
+            <form class="mt-6 space-y-6" method="post">
               <label class="block">
                 <p class="text-sm font-semibold">Email address</p>
                 <input
@@ -71,6 +71,26 @@
                 </button>
               </div>
             </form>
+            <?php
+            require 'database.php';
+
+            if (isset($_POST['sign-up'])) {
+              $email = $_POST['email-address'];
+              $password = $_POST['password'];
+              $confirm_password = $_POST['confirm-password'];
+              $date_created = date('Y-m-d H:i:s');
+
+              if ($password != $confirm_password) {
+                echo '<p class="mt-4">Passwords do not match.</p>';
+              } else {
+                $query =
+                  "INSERT INTO `user_accounts` (`email_address`, `password`, `date_created`) VALUES ('$email', '" .
+                  md5($password) .
+                  "', '$date_created')";
+                $result = mysqli_query($mysqli, $query);
+              }
+            }
+            ?>
           </div>
 
           <div
