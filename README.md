@@ -40,10 +40,10 @@ This project uses PHP and [Tailwind CSS](https://tailwindcss.com). To run this r
 
 4. Start the XAMPP localhost
 5. Navigate to http://localhost/ecommerce-website
-6. Run the "watch" script in a terminal to update stylesheets when files change
+6. Run the "build" script to compile CSS and JavaScript
 
    ```shell
-   npm run watch
+   npm run build
    ```
 
 ## Creating Database
