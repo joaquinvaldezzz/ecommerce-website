@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign up</title>
-    <link rel="stylesheet" href="dist/main.css" />
-    <link rel="icon" href="public/favicon.svg" />
-    <script src="dist/goBack.js"></script>
+    <link rel="stylesheet" href="/ecommerce-website/dist/main.css" />
+    <link rel="icon" href="/ecommerce-website/public/favicon.svg" />
+    <script src="/ecommerce-website/dist/goBack.js"></script>
   </head>
 
   <body class="bg-white text-slate-900 antialiased">
