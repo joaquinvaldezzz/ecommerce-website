@@ -6,6 +6,7 @@
     <title>Sign up</title>
     <link rel="stylesheet" href="dist/main.css" />
     <link rel="icon" href="public/favicon.svg" />
+    <script src="dist/goBack.js"></script>
   </head>
 
   <body class="bg-white text-slate-900 antialiased">
@@ -13,7 +14,7 @@
       <div role="grid">
         <div class="grid grid-cols-1 md:grid-cols-2 md:items-center md:gap-8" role="row">
           <div class="p-8 md:pr-0 lg:mx-auto lg:w-full lg:max-w-sm lg:pl-0" role="gridcell">
-            <button class="flex items-center">
+            <button class="flex items-center" id="go-back">
               <svg
                 class="h-6 w-6 text-slate-500"
                 fill="none"
