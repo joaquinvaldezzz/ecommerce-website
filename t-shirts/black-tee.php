@@ -99,11 +99,11 @@
                   </svg>
                 </div>
                 <p class="mt-8 text-slate-600">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis pharetra mi,
-                  arcu, tortor egestas eu pellentesque interdum. Purus mattis nibh ultricies semper
-                  et tristique. Faucibus congue ullamcorper vulputate nulla sed bibendum hendrerit
-                  hac aliquam. In elementum ut eu rhoncus. At enim risus adipiscing sit condimentum
-                  non adipiscing cras varius.
+                  The Ugmonk Essential tee is carefully cut and sewn by hand in Los Angeles,
+                  California. The tees are then enzyme washed for added softness and garment dyed to
+                  our own custom colors. The garment dye process creates subtle variations of color,
+                  making each tee truly unique. Since the tees are pre-shrunk, they will fit the
+                  same on day one as day one hundred.
                 </p>
 
                 <fieldset class="mt-4">
@@ -162,13 +162,13 @@
                   </button>
                 </div>
 
-                <h2 class="mt-8 font-bold">Fabric and Care</h2>
+                <h2 class="mt-8 font-bold">Details</h2>
                 <ul class="mt-4 list-disc space-y-1.5 pl-4 text-sm text-slate-600">
-                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                  <li>Cut, sewn, and dyed in Los Angeles, CA, USA</li>
+                  <li>Garment dyed</li>
+                  <li>Pre-washed &amp; pre-shrunk</li>
+                  <li>Soft 100% ringspun cotton</li>
+                  <li>Model is 5'11'' wearing size S</li>
                 </ul>
               </div>
             </div>
