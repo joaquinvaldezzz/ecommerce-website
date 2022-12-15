@@ -132,7 +132,7 @@
               </div>
 
               <div role="gridcell">
-                <a href="/product-overview">
+                <a href="/ecommerce-website/t-shirts/black-tee.php">
                   <img
                     class="rounded-lg"
                     src="/ecommerce-website/public/images/trending-products/tee-black.jpg"
