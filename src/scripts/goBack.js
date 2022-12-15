@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (button) {
     button.addEventListener('click', () => {
-      window.history.back()
+      window.location.href = '/ecommerce-website/'
     })
   }
 })
