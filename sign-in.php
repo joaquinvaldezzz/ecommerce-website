@@ -65,7 +65,7 @@
 
             <p class="mt-4">
               <?php
-              require 'database.php';
+              require 'includes/database.php';
 
               if (isset($_POST['log-in'])) {
                 $email_address = $_POST['email-address'];
