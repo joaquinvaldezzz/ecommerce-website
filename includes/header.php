@@ -20,7 +20,7 @@
 
     <div class="ml-auto flex items-center">
       <div class="hidden md:flex md:items-center">
-        <a class="text-sm font-medium" href="#">Sign in</a>
+        <a class="text-sm font-medium" href="sign-in.php">Sign in</a>
         <span class="select-none text-sm text-slate-300 md:mx-6 lg:mx-8">|</span>
         <a class="text-sm font-medium" href="sign-up.php">Create an account</a>
       </div>
