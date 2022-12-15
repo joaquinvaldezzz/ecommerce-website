@@ -10,6 +10,16 @@ CREATE TABLE
     date_created DATETIME NOT NULL
   );
 
+ALTER TABLE
+  user_accounts
+ADD COLUMN
+  first_name VARCHAR(256) NOT NULL AFTER id;
+
+ALTER TABLE
+  user_accounts
+ADD COLUMN
+  last_name VARCHAR(256) NOT NULL after first_name;
+
 CREATE TABLE
   shopping_cart (
     item_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -21,3 +31,6 @@ CREATE TABLE
     item_account_id INT NOT NULL,
     FOREIGN KEY (item_account_id) REFERENCES user_accounts (id)
   );
+
+ALTER TABLE
+  user_accounts auto_increment = 1;
