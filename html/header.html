@@ -18,12 +18,6 @@
       </svg>
     </button>
 
-    <!-- <div class="hidden md:flex md:items-center md:space-x-6 lg:space-x-8">
-      <a class="text-sm font-medium" href="#">Men</a>
-      <a class="text-sm font-medium" href="#">Women</a>
-      <a class="text-sm font-medium" href="#">Store</a>
-    </div> -->
-
     <div class="ml-auto flex items-center">
       <div class="hidden md:flex md:items-center">
         <a class="text-sm font-medium" href="#">Sign in</a>
