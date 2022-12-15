@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>eCommerce Website</title>
     <link rel="stylesheet" href="/ecommerce-website/dist/main.css" />
-    <link rel="icon" href="/ecommerce-website/public/favicon.svg" />
+    <link rel="icon" href="/ecommerce-website//ecommerce-website/public/favicon.svg" />
   </head>
 
   <body class="min-h-screen bg-white text-slate-900 antialiased">
@@ -42,19 +42,47 @@
                 <div role="grid">
                   <div class="grid grid-cols-3 items-center gap-4 lg:gap-8" role="row">
                     <div class="grid gap-4 lg:gap-8" role="gridcell">
-                      <img class="rounded-lg" src="public/images/banner/01.jpg" alt="" />
-                      <img class="rounded-lg" src="public/images/banner/02.jpg" alt="" />
+                      <img
+                        class="rounded-lg"
+                        src="/ecommerce-website/public/images/banner/01.jpg"
+                        alt=""
+                      />
+                      <img
+                        class="rounded-lg"
+                        src="/ecommerce-website/public/images/banner/02.jpg"
+                        alt=""
+                      />
                     </div>
 
                     <div class="grid gap-4 lg:gap-8" role="gridcell">
-                      <img class="rounded-lg" src="public/images/banner/03.jpg" alt="" />
-                      <img class="rounded-lg" src="public/images/banner/04.jpg" alt="" />
-                      <img class="rounded-lg" src="public/images/banner/05.jpg" alt="" />
+                      <img
+                        class="rounded-lg"
+                        src="/ecommerce-website/public/images/banner/03.jpg"
+                        alt=""
+                      />
+                      <img
+                        class="rounded-lg"
+                        src="/ecommerce-website/public/images/banner/04.jpg"
+                        alt=""
+                      />
+                      <img
+                        class="rounded-lg"
+                        src="/ecommerce-website/public/images/banner/05.jpg"
+                        alt=""
+                      />
                     </div>
 
                     <div class="grid gap-4 lg:gap-8" role="gridcell">
-                      <img class="rounded-lg" src="public/images/banner/06.jpg" alt="" />
-                      <img class="rounded-lg" src="public/images/banner/07.jpg" alt="" />
+                      <img
+                        class="rounded-lg"
+                        src="/ecommerce-website/public/images/banner/06.jpg"
+                        alt=""
+                      />
+                      <img
+                        class="rounded-lg"
+                        src="/ecommerce-website/public/images/banner/07.jpg"
+                        alt=""
+                      />
                     </div>
                   </div>
                 </div>
@@ -73,7 +101,7 @@
                 <a href="#">
                   <img
                     class="rounded-lg"
-                    src="public/images/trending-products/tee-deep-forest.jpg"
+                    src="/ecommerce-website/public/images/trending-products/tee-deep-forest.jpg"
                     alt="Deep Forest Tee"
                   />
                   <div class="mt-4 flex justify-between">
@@ -90,7 +118,7 @@
                 <a href="#">
                   <img
                     class="rounded-lg"
-                    src="public/images/trending-products/tee-canyon.jpg"
+                    src="/ecommerce-website/public/images/trending-products/tee-canyon.jpg"
                     alt="Canyon Tee"
                   />
                   <div class="mt-4 flex justify-between">
@@ -107,7 +135,7 @@
                 <a href="/product-overview">
                   <img
                     class="rounded-lg"
-                    src="public/images/trending-products/tee-black.jpg"
+                    src="/ecommerce-website/public/images/trending-products/tee-black.jpg"
                     alt="Black Tee"
                   />
                   <div class="mt-4 flex justify-between">
@@ -124,83 +152,13 @@
                 <a href="#">
                   <img
                     class="rounded-lg"
-                    src="public/images/trending-products/tee-sienna.jpg"
+                    src="/ecommerce-website/public/images/trending-products/tee-sienna.jpg"
                     alt="Seinna Tee"
                   />
                   <div class="mt-4 flex justify-between">
                     <div>
                       <h3>Men's Essential Tee</h3>
                       <div class="text-sm text-slate-500">Sienna</div>
-                    </div>
-                    <div class="font-bold">$29.00</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4" role="row">
-              <div role="gridcell">
-                <a href="#">
-                  <img
-                    class="rounded-lg"
-                    src="public/images/trending-products/tee-standard-sienna.jpg"
-                    alt="Standard Fit - Sienna Tee"
-                  />
-                  <div class="mt-4 flex justify-between">
-                    <div>
-                      <h3>Women's Essential Tee</h3>
-                      <div class="text-sm text-slate-500">Standard Fit - Sienna</div>
-                    </div>
-                    <div class="font-bold">$29.00</div>
-                  </div>
-                </a>
-              </div>
-
-              <div role="gridcell">
-                <a href="#">
-                  <img
-                    class="rounded-lg"
-                    src="public/images/trending-products/tee-standard-brick.jpg"
-                    alt="Standard Fit - Brick Tee"
-                  />
-                  <div class="mt-4 flex justify-between">
-                    <div>
-                      <h3>Women's Essential Tee</h3>
-                      <div class="text-sm text-slate-500">Standard Fit - Brick</div>
-                    </div>
-                    <div class="font-bold">$29.00</div>
-                  </div>
-                </a>
-              </div>
-
-              <div role="gridcell">
-                <a href="#">
-                  <img
-                    class="rounded-lg"
-                    src="public/images/trending-products/tee-standard-black.jpg"
-                    alt="Standard Fit - Black Tee"
-                  />
-                  <div class="mt-4 flex justify-between">
-                    <div>
-                      <h3>Women's Essential Tee</h3>
-                      <div class="text-sm text-slate-500">Standard Fit - Black</div>
-                    </div>
-                    <div class="font-bold">$29.00</div>
-                  </div>
-                </a>
-              </div>
-
-              <div role="gridcell">
-                <a href="#">
-                  <img
-                    class="rounded-lg"
-                    src="public/images/trending-products/tee-standard-willow.jpg"
-                    alt="Standard Fit - Willow Tee"
-                  />
-                  <div class="mt-4 flex justify-between">
-                    <div>
-                      <h3>Women's Essential Tee</h3>
-                      <div class="text-sm text-slate-500">Standard Fit - Willow</div>
                     </div>
                     <div class="font-bold">$29.00</div>
                   </div>
