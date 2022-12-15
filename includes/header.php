@@ -39,7 +39,7 @@
         </button>
 
         <div class="ml-6 lg:ml-8">
-          <a class="flex items-center" href="#">
+          <a class="flex items-center" href="/ecommerce-website/shopping-cart.php">
             <svg class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 20 20">
               <path
                 stroke="currentColor"
