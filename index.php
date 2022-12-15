@@ -94,7 +94,7 @@
 
       <section class="my-8 sm:my-12 md:my-16 lg:my-16">
         <div class="px-8 2xl:mx-auto 2xl:max-w-screen-2xl">
-          <h2 class="text-2xl font-extrabold tracking-tight md:text-3xl">Trending products</h2>
+          <h2 class="text-2xl font-extrabold tracking-tight md:text-3xl">Trending shirts</h2>
           <div class="mt-8 grid gap-8" role="grid">
             <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4" role="row">
               <div role="gridcell">
