@@ -83,15 +83,15 @@
 
               // Check if all fields are filled in
               if (empty($email) || empty($password) || empty($confirm_password)) {
-                echo '<p class="mt-4">Please fill in all fields.</p>';
+                include './src/alerts/fill-all-fields.html';
               }
               // Checks if passwords match
               elseif ($password != $confirm_password) {
-                echo '<p class="mt-4">Passwords do not match.</p>';
+                include './src/alerts/mismath-passwords.html';
               }
               // Checks if password is at least 8 characters
               elseif (strlen($password) < 8) {
-                echo '<p class="mt-4">Password must be at least 8 characters.</p>';
+                include 'src/alerts/password-length.html';
               }
               // Proceeds to create account
               else {
@@ -112,11 +112,11 @@
 
                 // Checks if email address already exists
                 if ($email_result['email_address'] === $email) {
-                  echo '<p class="mt-4">Email address already exists.</p>';
+                  include 'src/alerts/email-already-existing.html';
                 }
                 // Otherwise, create an account
                 else {
-                  echo '<p class="mt-4">Account created successfully.</p>';
+                  include 'src/alerts/success-sign-up.html';
                   mysqli_query($mysqli, $insert_query);
                 }
               }
