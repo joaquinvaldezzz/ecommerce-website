@@ -73,7 +73,7 @@
               </div>
             </form>
             <?php
-            require 'database.php';
+            require 'includes/database.php';
 
             if (isset($_POST['sign-up'])) {
               $email = $_POST['email-address'];
@@ -81,14 +81,44 @@
               $confirm_password = $_POST['confirm-password'];
               $date_created = date('Y-m-d H:i:s');
 
-              if ($password != $confirm_password) {
+              // Check if all fields are filled in
+              if (empty($email) || empty($password) || empty($confirm_password)) {
+                echo '<p class="mt-4">Please fill in all fields.</p>';
+              }
+              // Checks if passwords match
+              elseif ($password != $confirm_password) {
                 echo '<p class="mt-4">Passwords do not match.</p>';
-              } else {
-                $query =
+              }
+              // Checks if password is at least 8 characters
+              elseif (strlen($password) < 8) {
+                echo '<p class="mt-4">Password must be at least 8 characters.</p>';
+              }
+              // Proceeds to create account
+              else {
+                // INSERT query
+                $insert_query =
                   "INSERT INTO `user_accounts` (`email_address`, `password`, `date_created`) VALUES ('$email', '" .
                   md5($password) .
                   "', '$date_created')";
-                $result = mysqli_query($mysqli, $query);
+
+                // SELECT query
+                $email_query = mysqli_query(
+                  $mysqli,
+                  "SELECT * FROM `user_accounts` WHERE `email_address` = '$email'"
+                );
+
+                // Fetches result
+                $email_result = mysqli_fetch_array($email_query);
+
+                // Checks if email address already exists
+                if ($email_result['email_address'] === $email) {
+                  echo '<p class="mt-4">Email address already exists.</p>';
+                }
+                // Otherwise, create an account
+                else {
+                  echo '<p class="mt-4">Account created successfully.</p>';
+                  mysqli_query($mysqli, $insert_query);
+                }
               }
             }
             ?>
