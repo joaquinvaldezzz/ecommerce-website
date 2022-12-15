@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>eCommerce Website</title>
     <link rel="stylesheet" href="/ecommerce-website/dist/main.css" />
-    <link rel="icon" href="/ecommerce-website//ecommerce-website/public/favicon.svg" />
+    <link rel="icon" href="/ecommerce-website/public/favicon.svg" />
   </head>
 
   <body class="min-h-screen bg-white text-slate-900 antialiased">
