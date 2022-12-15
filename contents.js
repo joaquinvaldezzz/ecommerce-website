@@ -3,5 +3,5 @@ module.exports = [
   './*.php',
   './html/**/*.html',
   './includes/**/*.{php,html}',
-  './src/components/**/*.html',
+  './src/alerts/**/*.html',
 ]
