@@ -4,5 +4,5 @@ module.exports = [
   './html/**/*.html',
   './includes/**/*.{php,html}',
   './src/alerts/**/*.html',
-  './t-shirts/**/*.html',
+  './t-shirts/**/*.{php,html}',
 ]
