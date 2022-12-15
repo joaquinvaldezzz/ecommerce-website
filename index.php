@@ -36,7 +36,7 @@
               </div>
 
               <div
-                class="-mt-12 -mr-64 sm:-mr-32 md:mr-0 lg:-mt-16 lg:-mr-20 2xl:mr-0"
+                class="-mt-14 -mr-64 sm:-mr-32 md:mr-0 lg:-mt-16 lg:-mr-20 2xl:mr-0"
                 role="gridcell"
               >
                 <div role="grid">
