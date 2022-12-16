@@ -22,45 +22,30 @@
       <?php
       session_start();
 
-      if (!isset($_SESSION['first_name'])) {
+      if (!isset($_SESSION['email_address'])) {
         echo '<div class="hidden md:flex md:items-center">
           <a class="text-sm font-medium" href="/ecommerce-website/sign-in.php">Sign in</a>
           <span class="select-none text-sm text-slate-300 md:mx-6 lg:mx-8">|</span>
           <a class="text-sm font-medium" href="/ecommerce-website/sign-up.php">Create an account</a>
         </div>';
       } else {
-        echo '<p class="text-sm">Hello, ' . $_SESSION['first_name'] . '!</p>';
-        echo '<a class="text-sm" href="/ecommerce-website/sign-out.php">Sign out</a>';
+        echo '<a class="text-sm font-medium" href="/ecommerce-website/sign-out.php">Sign out</a>';
       }
       ?>
 
       <div class="flex items-center md:ml-6 lg:ml-8">
-        <button>
+        <a class="flex items-center" href="/ecommerce-website/shopping-cart.php">
           <svg class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 20 20">
             <path
               stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="m17.5 17.5-5-5 5 5Zm-3.333-9.167a5.833 5.833 0 1 1-11.666 0 5.833 5.833 0 0 1 11.666 0Z"
+              d="M13.333 9.167V5.833a3.333 3.333 0 0 0-6.666 0v3.334h6.666ZM4.167 7.5h11.666l.834 10H3.333l.834-10Z"
             />
           </svg>
-        </button>
-
-        <div class="ml-6 lg:ml-8">
-          <a class="flex items-center" href="/ecommerce-website/shopping-cart.php">
-            <svg class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 20 20">
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13.333 9.167V5.833a3.333 3.333 0 0 0-6.666 0v3.334h6.666ZM4.167 7.5h11.666l.834 10H3.333l.834-10Z"
-              />
-            </svg>
-            <div class="ml-2 text-sm font-medium">0</div>
-          </a>
-        </div>
+          <div class="ml-2 text-sm font-medium">0</div>
+        </a>
       </div>
     </div>
   </nav>
