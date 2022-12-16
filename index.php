@@ -28,7 +28,7 @@
                 <div class="mt-4">
                   <a
                     class="inline-block rounded-lg bg-indigo-600 px-8 py-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-offset-2"
-                    href="#"
+                    href="#collection"
                   >
                     Shop Collection
                   </a>
@@ -92,7 +92,7 @@
         </div>
       </section>
 
-      <section class="my-8 sm:my-12 md:my-16 lg:my-16">
+      <section class="my-8 sm:my-12 md:my-16 lg:my-16" id="collection">
         <div class="px-8 2xl:mx-auto 2xl:max-w-screen-2xl">
           <h2 class="text-2xl font-extrabold tracking-tight md:text-3xl">Trending shirts</h2>
           <div class="mt-8 grid gap-8" role="grid">
