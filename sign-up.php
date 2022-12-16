@@ -105,15 +105,14 @@
               if (
                 empty($email) ||
                 empty($first_name) ||
-                empty($last_name) ||
                 empty($password) ||
                 empty($confirm_password)
               ) {
-                include './src/alerts/fill-all-fields.html';
+                include 'src/alerts/fill-all-fields.html';
               }
               // Checks if passwords match
               elseif ($password != $confirm_password) {
-                include './src/alerts/mismath-passwords.html';
+                include 'src/alerts/mismath-passwords.html';
               }
               // Checks if password is at least 8 characters
               elseif (strlen($password) < 8) {
