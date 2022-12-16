@@ -20,6 +20,9 @@ ALTER TABLE
 ADD COLUMN
   last_name VARCHAR(256) NOT NULL after first_name;
 
+ALTER TABLE
+  user_accounts MODIFY COLUMN last_name VARCHAR(256);
+
 CREATE TABLE
   shopping_cart (
     item_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
