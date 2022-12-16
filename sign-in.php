@@ -66,22 +66,21 @@
             <p class="mt-4">
               <?php
               require 'includes/database.php';
+              session_start();
 
               if (isset($_POST['log-in'])) {
                 $email_address = $_POST['email-address'];
                 $password = md5($_POST['password']);
-
-                $login_query = mysqli_query(
-                  $mysqli,
-                  "SELECT * FROM `user_accounts` WHERE `email_address` = '$email_address' AND `password` = '$password'"
-                );
-
+                $query = "SELECT * FROM `user_accounts` WHERE `email_address` = '$email_address' AND `password` = '$password'";
+                $login_query = mysqli_query($mysqli, $query);
                 $result = mysqli_fetch_array($login_query);
+                ($result = mysqli_query($mysqli, $query)) or die(mysql_error());
 
-                if ($result) {
-                  echo 'Login successfully.';
+                if (mysqli_num_rows($result) === 1) {
+                  $_SESSION['first_name'] = $email_address;
+                  header('Location: index.php');
                 } else {
-                  echo 'Username and password did not match.';
+                  include 'src/alerts/incorrect-credentials.html';
                 }
               }
               ?>
