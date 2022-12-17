@@ -9,7 +9,13 @@
   </head>
 
   <body class="min-h-screen bg-white text-slate-900 antialiased">
-    <?php include 'includes/header.php'; ?>
+    <?php
+    include 'includes/header.php';
+    include 'includes/db_controller.php';
+
+    $db_handle = new DBController();
+    $products = $db_handle->run_query('SELECT * FROM products_table ORDER BY product_id ASC');
+    ?>
 
     <main>
       <section class="overflow-hidden pt-8 sm:pt-12 md:pt-16 lg:pt-0">
@@ -97,97 +103,32 @@
           <h2 class="text-2xl font-extrabold tracking-tight md:text-3xl">Trending products</h2>
           <div class="mt-8 grid gap-8" role="grid">
             <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4" role="row">
-              <div role="gridcell">
-                <img
-                  class="rounded-lg"
-                  src="/ecommerce-website/public/images/trending-products/tee-deep-forest.jpg"
-                  alt="Deep Forest Tee"
-                />
-                <div class="mt-4 flex justify-between">
-                  <div>
-                    <h3>Men's Essential Tee</h3>
-                    <div class="text-sm text-slate-500">Deep Forest</div>
+              <?php for ($i = 0; $i < sizeof($products); $i += 1): ?>
+                <div role="gridcell">
+                  <img
+                    class="rounded-lg"
+                    src="<?php echo $products[$i]['product_image']; ?>"
+                    alt="<?php echo $products[$i]['product_color']; ?> Tee"
+                  />
+                  <div class="mt-4 flex justify-between">
+                    <div>
+                      <h3><?php echo $products[$i]['product_name']; ?></h3>
+                      <div class="text-sm text-slate-500"><?php echo $products[$i][
+                        'product_color'
+                      ]; ?></div>
+                    </div>
+                    <div class="font-bold">$<?php echo $products[$i]['product_price']; ?></div>
                   </div>
-                  <div class="font-bold">$29.00</div>
-                </div>
-                <div class="mt-4">
-                  <button
-                    class="block w-full rounded-lg bg-indigo-600 px-4 py-3 text-white"
-                    type="button"
-                  >
-                    Add to cart
-                  </button>
-                </div>
-              </div>
-
-              <div role="gridcell">
-                <img
-                  class="rounded-lg"
-                  src="/ecommerce-website/public/images/trending-products/tee-canyon.jpg"
-                  alt="Canyon Tee"
-                />
-                <div class="mt-4 flex justify-between">
-                  <div>
-                    <h3>Men's Essential Tee</h3>
-                    <div class="text-sm text-slate-500">Canyon</div>
+                  <div class="mt-4">
+                    <button
+                      class="block w-full rounded-lg bg-indigo-600 px-4 py-3 text-white"
+                      type="button"
+                    >
+                      Add to cart
+                    </button>
                   </div>
-                  <div class="font-bold">$29.00</div>
                 </div>
-                <div class="mt-4">
-                  <button
-                    class="block w-full rounded-lg bg-indigo-600 px-4 py-3 text-white"
-                    type="button"
-                  >
-                    Add to cart
-                  </button>
-                </div>
-              </div>
-
-              <div role="gridcell">
-                <img
-                  class="rounded-lg"
-                  src="/ecommerce-website/public/images/trending-products/tee-black.jpg"
-                  alt="Black Tee"
-                />
-                <div class="mt-4 flex justify-between">
-                  <div>
-                    <h3>Men's Essential Tee</h3>
-                    <div class="text-sm text-slate-500">Black</div>
-                  </div>
-                  <div class="font-bold">$29.00</div>
-                </div>
-                <div class="mt-4">
-                  <button
-                    class="block w-full rounded-lg bg-indigo-600 px-4 py-3 text-white"
-                    type="button"
-                  >
-                    Add to cart
-                  </button>
-                </div>
-              </div>
-
-              <div role="gridcell">
-                <img
-                  class="rounded-lg"
-                  src="/ecommerce-website/public/images/trending-products/tee-sienna.jpg"
-                  alt="Seinna Tee"
-                />
-                <div class="mt-4 flex justify-between">
-                  <div>
-                    <h3>Men's Essential Tee</h3>
-                    <div class="text-sm text-slate-500">Sienna</div>
-                  </div>
-                  <div class="font-bold">$29.00</div>
-                </div>
-                <div class="mt-4">
-                  <button
-                    class="block w-full rounded-lg bg-indigo-600 px-4 py-3 text-white"
-                    type="button"
-                  >
-                    Add to cart
-                  </button>
-                </div>
-              </div>
+              <?php endfor; ?>
             </div>
           </div>
 
