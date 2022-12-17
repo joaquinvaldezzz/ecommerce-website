@@ -19,19 +19,16 @@
     </button>
 
     <div class="ml-auto flex items-center">
-      <?php
-      session_start();
-
-      if (!isset($_SESSION['email_address'])) {
-        echo '<div class="hidden md:flex md:items-center">
+      <?php session_start(); ?>
+      <?php if (!isset($_SESSION['email_address'])): ?>
+        <div class="hidden md:flex md:items-center">
           <a class="text-sm font-medium" href="/ecommerce-website/sign-in.php">Sign in</a>
           <span class="select-none text-sm text-slate-300 md:mx-6 lg:mx-8">|</span>
           <a class="text-sm font-medium" href="/ecommerce-website/sign-up.php">Create an account</a>
-        </div>';
-      } else {
-        echo '<a class="text-sm font-medium" href="/ecommerce-website/sign-out.php">Sign out</a>';
-      }
-      ?>
+        </div>
+      <?php else: ?>
+        <a class="text-sm font-medium" href="/ecommerce-website/sign-out.php">Sign out</a>
+      <?php endif; ?>
 
       <div class="flex items-center md:ml-6 lg:ml-8">
         <a class="flex items-center" href="/ecommerce-website/shopping-cart.php">
