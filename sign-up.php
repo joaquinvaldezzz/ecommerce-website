@@ -94,57 +94,53 @@
             require 'includes/database.php';
 
             if (isset($_POST['sign-up'])) {
+
               $email = $_POST['email-address'];
               $first_name = $_POST['first-name'];
               $last_name = $_POST['last-name'];
               $password = $_POST['password'];
               $confirm_password = $_POST['confirm-password'];
               $date_created = date('Y-m-d H:i:s');
+              ?>
 
-              // Check if all fields are filled in
-              if (
-                empty($email) ||
-                empty($first_name) ||
-                empty($password) ||
-                empty($confirm_password)
-              ) {
-                include 'src/alerts/fill-all-fields.html';
-              }
-              // Checks if passwords match
-              elseif ($password != $confirm_password) {
-                include 'src/alerts/mismath-passwords.html';
-              }
-              // Checks if password is at least 8 characters
-              elseif (strlen($password) < 8) {
-                include 'src/alerts/password-length.html';
-              }
-              // Proceeds to create account
-              else {
-                // INSERT query
-                $insert_query =
-                  "INSERT INTO `user_accounts` (`first_name`, `last_name` , `email_address`, `password`, `date_created`) VALUES ('$first_name', '$last_name', '$email', '" .
-                  md5($password) .
-                  "', '$date_created')";
+            <?php if (
+              empty($email) ||
+              empty($first_name) ||
+              empty($password) ||
+              empty($confirm_password)
+            ): ?>
+              <div class="mt-4 rounded-lg border border-red-300 bg-red-100 p-4 text-sm text-red-500">
+                <p>Please fill in all fields.</p>
+              </div>
+            <?php elseif ($password != $confirm_password): ?>
+              <div class="mt-4 rounded-lg border border-red-300 bg-red-100 p-4 text-sm text-red-500">
+                <p>Passwords do not match.</p>
+              </div>
+            <?php elseif (strlen($password) < 8): ?>
+              <div class="mt-4 rounded-lg border border-red-300 bg-red-100 p-4 text-sm text-red-500">
+                <p>Password must be at least 8 characters.</p>
+              </div>
+            <?php else:
+              $insert_query =
+                "INSERT INTO `user_accounts` (`first_name`, `last_name` , `email_address`, `password`, `date_created`) VALUES ('$first_name', '$last_name', '$email', '" .
+                md5($password) .
+                "', '$date_created')";
+              $email_query = mysqli_query(
+                $mysqli,
+                "SELECT * FROM `user_accounts` WHERE `email_address` = '$email'"
+              );
 
-                // SELECT query
-                $email_query = mysqli_query(
-                  $mysqli,
-                  "SELECT * FROM `user_accounts` WHERE `email_address` = '$email'"
-                );
+              $email_result = mysqli_fetch_array($email_query);
 
-                // Fetches result
-                $email_result = mysqli_fetch_array($email_query);
-
-                // Checks if email address already exists
-                if ($email_result['email_address'] === $email) {
-                  include 'src/alerts/email-already-existing.html';
-                }
-                // Otherwise, create an account
-                else {
-                  include 'src/alerts/success-sign-up.html';
-                  mysqli_query($mysqli, $insert_query);
-                }
+              if ($email_result['email_address'] === $email) {
+                include 'src/alerts/email-already-existing.html';
+              } else {
+                include 'src/alerts/success-sign-up.html';
+                mysqli_query($mysqli, $insert_query);
               }
+              ?>
+            <?php endif; ?>
+            <?php
             }
             ?>
           </div>
