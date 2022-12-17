@@ -76,17 +76,6 @@
                 $login_query = mysqli_query($mysqli, $query);
                 $result = mysqli_fetch_array($login_query);
                 ($result = mysqli_query($mysqli, $query)) or die(mysql_error());
-
-                if (mysqli_num_rows($result) === 1) {
-                  while ($row = mysqli_fetch_array($result)) {
-                    $first_name = $row['first_name'];
-                  }
-
-                  $_SESSION['first_name'] = $first_name;
-                  header('Location: index.php');
-                } else {
-                  include 'src/alerts/incorrect-credentials.html';
-                }
                 ?>
 
               <?php if (mysqli_num_rows($result) === 1): ?>
