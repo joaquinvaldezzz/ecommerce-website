@@ -24,6 +24,15 @@ CREATE TABLE
     FOREIGN KEY (item_account_id) REFERENCES user_accounts (id)
   );
 
+CREATE TABLE
+  products_table (
+    product_id INT PRIMARY KEY NOT NULL,
+    product_image VARCHAR(256) NOT NULL,
+    product_name VARCHAR(256) NOT NULL,
+    product_color VARCHAR(256) NOT NULL,
+    product_price DECIMAL(10, 2) NOT NULL
+  );
+
 -- Rest AUTO_INCREMENT of `id` in `user_accounts`
 ALTER TABLE
   user_accounts auto_increment = 1;
