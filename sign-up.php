@@ -131,14 +131,20 @@
               );
 
               $email_result = mysqli_fetch_array($email_query);
-
-              if ($email_result['email_address'] === $email) {
-                include 'src/alerts/email-already-existing.html';
-              } else {
-                include 'src/alerts/success-sign-up.html';
-                mysqli_query($mysqli, $insert_query);
-              }
               ?>
+              <?php if ($email_result['email_address'] === $email): ?>
+                <div class="mt-4 rounded-lg border border-red-300 bg-red-100 p-4 text-sm text-red-500">
+                  <p>Email address is already taken.</p>
+                </div>
+              <?php else: ?>
+                <div class="mt-4 rounded-lg border border-green-300 bg-green-100 p-4 text-sm text-green-500">
+                  <p>
+                    Account creation success! Sign in to your account
+                    <a class="font-bold underline" href="sign-in.php">here</a>.
+                  </p>
+                </div>
+                <?php mysqli_query($mysqli, $insert_query); ?>
+              <?php endif; ?>
             <?php endif; ?>
             <?php
             }
