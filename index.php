@@ -94,75 +94,99 @@
 
       <section class="my-8 sm:my-12 md:my-16 lg:my-16" id="collection">
         <div class="px-8 2xl:mx-auto 2xl:max-w-screen-2xl">
-          <h2 class="text-2xl font-extrabold tracking-tight md:text-3xl">Trending shirts</h2>
+          <h2 class="text-2xl font-extrabold tracking-tight md:text-3xl">Trending products</h2>
           <div class="mt-8 grid gap-8" role="grid">
             <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4" role="row">
               <div role="gridcell">
-                <a href="#">
-                  <img
-                    class="rounded-lg"
-                    src="/ecommerce-website/public/images/trending-products/tee-deep-forest.jpg"
-                    alt="Deep Forest Tee"
-                  />
-                  <div class="mt-4 flex justify-between">
-                    <div>
-                      <h3>Men's Essential Tee</h3>
-                      <div class="text-sm text-slate-500">Deep Forest</div>
-                    </div>
-                    <div class="font-bold">$29.00</div>
+                <img
+                  class="rounded-lg"
+                  src="/ecommerce-website/public/images/trending-products/tee-deep-forest.jpg"
+                  alt="Deep Forest Tee"
+                />
+                <div class="mt-4 flex justify-between">
+                  <div>
+                    <h3>Men's Essential Tee</h3>
+                    <div class="text-sm text-slate-500">Deep Forest</div>
                   </div>
-                </a>
+                  <div class="font-bold">$29.00</div>
+                </div>
+                <div class="mt-4">
+                  <button
+                    class="block w-full rounded-lg bg-indigo-600 px-4 py-3 text-white"
+                    type="button"
+                  >
+                    Add to cart
+                  </button>
+                </div>
               </div>
 
               <div role="gridcell">
-                <a href="#">
-                  <img
-                    class="rounded-lg"
-                    src="/ecommerce-website/public/images/trending-products/tee-canyon.jpg"
-                    alt="Canyon Tee"
-                  />
-                  <div class="mt-4 flex justify-between">
-                    <div>
-                      <h3>Men's Essential Tee</h3>
-                      <div class="text-sm text-slate-500">Canyon</div>
-                    </div>
-                    <div class="font-bold">$29.00</div>
+                <img
+                  class="rounded-lg"
+                  src="/ecommerce-website/public/images/trending-products/tee-canyon.jpg"
+                  alt="Canyon Tee"
+                />
+                <div class="mt-4 flex justify-between">
+                  <div>
+                    <h3>Men's Essential Tee</h3>
+                    <div class="text-sm text-slate-500">Canyon</div>
                   </div>
-                </a>
+                  <div class="font-bold">$29.00</div>
+                </div>
+                <div class="mt-4">
+                  <button
+                    class="block w-full rounded-lg bg-indigo-600 px-4 py-3 text-white"
+                    type="button"
+                  >
+                    Add to cart
+                  </button>
+                </div>
               </div>
 
               <div role="gridcell">
-                <a href="/ecommerce-website/t-shirts/black-tee.php">
-                  <img
-                    class="rounded-lg"
-                    src="/ecommerce-website/public/images/trending-products/tee-black.jpg"
-                    alt="Black Tee"
-                  />
-                  <div class="mt-4 flex justify-between">
-                    <div>
-                      <h3>Men's Essential Tee</h3>
-                      <div class="text-sm text-slate-500">Black</div>
-                    </div>
-                    <div class="font-bold">$29.00</div>
+                <img
+                  class="rounded-lg"
+                  src="/ecommerce-website/public/images/trending-products/tee-black.jpg"
+                  alt="Black Tee"
+                />
+                <div class="mt-4 flex justify-between">
+                  <div>
+                    <h3>Men's Essential Tee</h3>
+                    <div class="text-sm text-slate-500">Black</div>
                   </div>
-                </a>
+                  <div class="font-bold">$29.00</div>
+                </div>
+                <div class="mt-4">
+                  <button
+                    class="block w-full rounded-lg bg-indigo-600 px-4 py-3 text-white"
+                    type="button"
+                  >
+                    Add to cart
+                  </button>
+                </div>
               </div>
 
               <div role="gridcell">
-                <a href="#">
-                  <img
-                    class="rounded-lg"
-                    src="/ecommerce-website/public/images/trending-products/tee-sienna.jpg"
-                    alt="Seinna Tee"
-                  />
-                  <div class="mt-4 flex justify-between">
-                    <div>
-                      <h3>Men's Essential Tee</h3>
-                      <div class="text-sm text-slate-500">Sienna</div>
-                    </div>
-                    <div class="font-bold">$29.00</div>
+                <img
+                  class="rounded-lg"
+                  src="/ecommerce-website/public/images/trending-products/tee-sienna.jpg"
+                  alt="Seinna Tee"
+                />
+                <div class="mt-4 flex justify-between">
+                  <div>
+                    <h3>Men's Essential Tee</h3>
+                    <div class="text-sm text-slate-500">Sienna</div>
                   </div>
-                </a>
+                  <div class="font-bold">$29.00</div>
+                </div>
+                <div class="mt-4">
+                  <button
+                    class="block w-full rounded-lg bg-indigo-600 px-4 py-3 text-white"
+                    type="button"
+                  >
+                    Add to cart
+                  </button>
+                </div>
               </div>
             </div>
           </div>
