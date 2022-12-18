@@ -33,6 +33,15 @@ CREATE TABLE
     product_price DECIMAL(10, 2) NOT NULL
   );
 
+CREATE TABLE
+  contact_us (
+    contact_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    contact_first_name VARCHAR(256) NOT NULL,
+    contact_last_name VARCHAR(256) NOT NULL,
+    contact_email VARCHAR(256) NOT NULL,
+    contact_message VARCHAR(256) NOT NULL
+  );
+
 -- Rest AUTO_INCREMENT of `id` in `user_accounts`
 ALTER TABLE
   user_accounts auto_increment = 1;
