@@ -92,6 +92,7 @@
             </form>
             <?php
             require 'includes/database.php';
+            date_default_timezone_set('Asia/Manila');
 
             if (isset($_POST['sign-up'])) {
 
