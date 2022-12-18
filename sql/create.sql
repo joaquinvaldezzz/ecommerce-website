@@ -39,7 +39,8 @@ CREATE TABLE
     contact_first_name VARCHAR(256) NOT NULL,
     contact_last_name VARCHAR(256) NOT NULL,
     contact_email VARCHAR(256) NOT NULL,
-    contact_message VARCHAR(256) NOT NULL
+    contact_message VARCHAR(256) NOT NULL,
+    date_sent DATETIME NOT NULL
   );
 
 -- Rest AUTO_INCREMENT of `id` in `user_accounts`
