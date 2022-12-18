@@ -20,7 +20,7 @@
         <div role="gridcell">
           <h2 class="font-bold text-white">Connect</h2>
           <ul class="mt-4 flex flex-col space-y-4 text-sm text-slate-400" aria-label="Connect">
-            <li><a class="hover:text-slate-200" href="#">Contact Us</a></li>
+            <li><a class="hover:text-slate-200" href="/ecommerce-website/contact-us.php">Contact Us</a></li>
           </ul>
         </div>
       </div>
