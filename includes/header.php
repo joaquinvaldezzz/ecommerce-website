@@ -32,22 +32,22 @@
           <span class="select-none text-sm text-slate-300 md:mx-6 lg:mx-8">|</span>
           <a class="text-sm font-medium" href="/ecommerce-website/sign-out.php">Sign out</a>
         </div>
-      <?php endif; ?>
 
-      <div class="flex items-center md:ml-6 lg:ml-8">
-        <a class="flex items-center" href="/ecommerce-website/shopping-cart.php">
-          <svg class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 20 20">
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13.333 9.167V5.833a3.333 3.333 0 0 0-6.666 0v3.334h6.666ZM4.167 7.5h11.666l.834 10H3.333l.834-10Z"
-            />
-          </svg>
-          <div class="ml-2 text-sm font-medium">0</div>
-        </a>
-      </div>
+        <div class="flex items-center md:ml-6 lg:ml-8">
+          <a class="flex items-center" href="/ecommerce-website/shopping-cart.php">
+            <svg class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 20 20">
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13.333 9.167V5.833a3.333 3.333 0 0 0-6.666 0v3.334h6.666ZM4.167 7.5h11.666l.834 10H3.333l.834-10Z"
+              />
+            </svg>
+            <div class="ml-2 text-sm font-medium">0</div>
+          </a>
+        </div>
+      <?php endif; ?>
     </div>
   </nav>
 </header>
