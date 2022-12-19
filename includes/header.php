@@ -44,7 +44,23 @@
                 d="M13.333 9.167V5.833a3.333 3.333 0 0 0-6.666 0v3.334h6.666ZM4.167 7.5h11.666l.834 10H3.333l.834-10Z"
               />
             </svg>
-            <div class="ml-2 text-sm font-medium">0</div>
+            <div class="ml-2 text-sm font-medium">
+              <?php
+              require 'database.php';
+
+              $fetch_query = mysqli_query(
+                $mysqli,
+                'SELECT COUNT(`item_id`) as `total` FROM `shopping_cart`'
+              );
+              $fetched_result = mysqli_fetch_array($fetch_query);
+
+              if (mysqli_num_rows($fetch_query) > 0) {
+                echo $fetched_result['total'];
+              } else {
+                echo '0';
+              }
+              ?>
+            </div>
           </a>
         </div>
       <?php endif; ?>
