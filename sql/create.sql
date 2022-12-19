@@ -43,6 +43,6 @@ CREATE TABLE
     date_sent DATETIME NOT NULL
   );
 
--- Rest AUTO_INCREMENT of `id` in `user_accounts`
+-- Reset `AUTO_INCREMENT` of `id` in `user_accounts`
 ALTER TABLE
   user_accounts auto_increment = 1;
