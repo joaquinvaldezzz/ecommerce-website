@@ -15,6 +15,7 @@ CREATE TABLE
 CREATE TABLE
   shopping_cart (
     item_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    item_image VARCHAR(256),
     item_name VARCHAR(256) NOT NULL,
     item_color VARCHAR(256) NOT NULL,
     item_price DECIMAL(10, 2) NOT NULL,
@@ -23,6 +24,11 @@ CREATE TABLE
     item_account_id INT NOT NULL,
     FOREIGN KEY (item_account_id) REFERENCES user_accounts (id)
   );
+
+ALTER TABLE
+  shopping_cart
+ADD COLUMN
+  item_image VARCHAR(256) AFTER item_id;
 
 CREATE TABLE
   products_table (
@@ -45,4 +51,4 @@ CREATE TABLE
 
 -- Reset `AUTO_INCREMENT` of `id` in `user_accounts`
 ALTER TABLE
-  user_accounts auto_increment = 1;
+  user_accounts AUTO_INCREMENT = 1;
