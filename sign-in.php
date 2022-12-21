@@ -82,9 +82,11 @@
                 <?php
                 while ($row = mysqli_fetch_array($result)) {
                   $first_name = $row['first_name'];
+                  $user_id = $row['id'];
                 }
 
                 $_SESSION['first_name'] = $first_name;
+                $_SESSION['user_id'] = $user_id;
                 header('Location: index.php');
                 ?>
               <?php else: ?>
