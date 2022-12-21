@@ -59,18 +59,21 @@
                           </div>
                         </div>
 
-
-                        <button class="h-min">
-                          <svg class="h-6 w-6 text-slate-400" fill="none" viewBox="0 0 24 24">
-                            <path
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="m6 6 12 12M6 18 18 6 6 18Z"
-                            />
-                          </svg>
-                        </button>
+                        <form action="shopping-cart.php?action=remove&id=<?php echo $cart_items[
+                          $key
+                        ]['item_id']; ?>" method="post">
+                          <button class="h-min">
+                            <svg class="h-6 w-6 text-slate-400" fill="none" viewBox="0 0 24 24">
+                              <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="m6 6 12 12M6 18 18 6 6 18Z"
+                              />
+                            </svg>
+                          </button>
+                        </form>
                       </div>
 
                       <div class="mt-auto flex items-center">
@@ -89,6 +92,18 @@
                   </div>
                   <?php endforeach; ?>
                 <?php endif; ?>
+
+                <?php if (isset($_SESSION['user_id'])) {
+                  if (!empty($_GET['action'])) {
+                    switch ($_GET['action']) {
+                      case 'remove':
+                        $item = $db_handle->run_query(
+                          'DELETE FROM shopping_cart WHERE `item_id` = ' . $_GET['id']
+                        );
+                        break;
+                    }
+                  }
+                } ?>
               </div>
             </div>
 
@@ -98,21 +113,50 @@
                 <div class="mt-6 space-y-4">
                   <div class="flex items-center justify-between">
                     <span class="text-sm text-slate-500">Subtotal</span>
-                    <span class="text-sm font-semibold">$87.00</span>
+                    <span class="text-sm font-semibold">
+                      <?php
+                      $get_subtotal = $db_handle->run_query(
+                        'SELECT SUM(item_total) AS subtotal FROM shopping_cart'
+                      );
+                      $subtotal = $get_subtotal[0]['subtotal'];
+
+                      if ($subtotal > 0) {
+                        echo '$' . $subtotal;
+                      } else {
+                        echo '$0.00';
+                      }
+                      ?>
+                    </span>
                   </div>
 
                   <hr class="border-slate-300" />
 
                   <div class="flex items-center justify-between">
                     <span class="text-sm text-slate-500">Shipping Fee</span>
-                    <span class="text-sm font-semibold">$5.00</span>
+                    <span class="text-sm font-semibold">
+                      <?php if ($subtotal > 100) {
+                        echo '$0.00';
+                      } elseif ($subtotal == 0.0) {
+                        echo '$0.00';
+                      } else {
+                        echo '$5.00';
+                      } ?>
+                    </span>
                   </div>
 
                   <hr class="border-slate-300" />
 
                   <div class="flex items-center justify-between">
                     <span class="font-bold">Order Total</span>
-                    <span class="font-bold">$92.00</span>
+                    <span class="font-bold">
+                      <?php if ($subtotal > 100) {
+                        echo '$' . $subtotal;
+                      } elseif ($subtotal == 0.0) {
+                        echo '$0.00';
+                      } else {
+                        echo '$' . ($subtotal + 5);
+                      } ?>
+                    </span>
                   </div>
                 </div>
 
