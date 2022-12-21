@@ -154,7 +154,7 @@
                       } elseif ($subtotal == 0.0) {
                         echo '$0.00';
                       } else {
-                        echo '$' . ($subtotal + 5);
+                        echo '$' . number_format($subtotal + 5, 2);
                       } ?>
                     </span>
                   </div>
