@@ -18,7 +18,7 @@
       </svg>
     </button>
 
-    <div>
+    <div class="ml-4">
       <a class="text-sm" href="/ecommerce-website/">eCommerce Website</a>
     </div>
 
