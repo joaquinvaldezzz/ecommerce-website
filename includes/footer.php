@@ -5,7 +5,7 @@
         <div role="gridcell">
           <h2 class="font-bold text-white">Company</h2>
           <ul class="mt-4 flex flex-col space-y-4 text-sm text-slate-400" aria-label="Shop">
-            <li><a class="hover:text-slate-200" href="#">About Us</a></li>
+            <li><a class="hover:text-slate-200" href="/ecommerce-website/about-us.php">About Us</a></li>
           </ul>
         </div>
 
