@@ -5,48 +5,42 @@ USE ecommerce;
 CREATE TABLE
   user_accounts (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    first_name VARCHAR(256) NOT NULL,
+    first_name VARCHAR(256),
     last_name VARCHAR(256),
-    email_address VARCHAR(256) NOT NULL,
-    password VARCHAR(256) NOT NULL,
-    date_created DATETIME NOT NULL
+    email_address VARCHAR(256),
+    password VARCHAR(256),
+    date_created DATETIME
   );
 
 CREATE TABLE
   shopping_cart (
     item_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     item_image VARCHAR(256),
-    item_name VARCHAR(256) NOT NULL,
-    item_color VARCHAR(256) NOT NULL,
-    item_price DECIMAL(10, 2) NOT NULL,
-    item_size VARCHAR(256) NOT NULL,
-    item_quantity INT NOT NULL,
-    item_account_id INT NOT NULL,
+    item_name VARCHAR(256),
+    item_color VARCHAR(256),
+    item_price DECIMAL(10, 2),
+    item_quantity INT,
+    item_account_id INT,
     FOREIGN KEY (item_account_id) REFERENCES user_accounts (id)
   );
-
-ALTER TABLE
-  shopping_cart
-ADD COLUMN
-  item_image VARCHAR(256) AFTER item_id;
 
 CREATE TABLE
   products_table (
     product_id INT PRIMARY KEY NOT NULL,
-    product_image VARCHAR(256) NOT NULL,
-    product_name VARCHAR(256) NOT NULL,
-    product_color VARCHAR(256) NOT NULL,
-    product_price DECIMAL(10, 2) NOT NULL
+    product_image VARCHAR(256),
+    product_name VARCHAR(256),
+    product_color VARCHAR(256),
+    product_price DECIMAL(10, 2)
   );
 
 CREATE TABLE
   contact_us (
     contact_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    contact_first_name VARCHAR(256) NOT NULL,
+    contact_first_name VARCHAR(256),
     contact_last_name VARCHAR(256),
-    contact_email VARCHAR(256) NOT NULL,
-    contact_message VARCHAR(256) NOT NULL,
-    date_sent DATETIME NOT NULL
+    contact_email VARCHAR(256),
+    contact_message VARCHAR(256),
+    date_sent DATETIME
   );
 
 -- Reset `AUTO_INCREMENT` of `id` in `user_accounts`
