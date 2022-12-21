@@ -103,32 +103,97 @@
           <h2 class="text-2xl font-extrabold tracking-tight md:text-3xl">Trending products</h2>
           <div class="mt-8 grid gap-8" role="grid">
             <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4" role="row">
-              <?php for ($i = 0; $i < sizeof($products); $i += 1): ?>
+              <?php foreach ($products as $key => $value): ?>
                 <div role="gridcell">
                   <img
                     class="rounded-lg"
-                    src="<?php echo $products[$i]['product_image']; ?>"
-                    alt="<?php echo $products[$i]['product_color']; ?> Tee"
+                    src="<?php echo $products[$key]['product_image']; ?>"
+                    alt="<?php echo $products[$key]['product_color']; ?> Tee"
                   />
                   <div class="mt-4 flex justify-between">
                     <div>
-                      <h3><?php echo $products[$i]['product_name']; ?></h3>
-                      <div class="text-sm text-slate-500"><?php echo $products[$i][
+                      <h3><?php echo $products[$key]['product_name']; ?></h3>
+                      <div class="text-sm text-slate-500"><?php echo $products[$key][
                         'product_color'
                       ]; ?></div>
                     </div>
-                    <div class="font-bold">$<?php echo $products[$i]['product_price']; ?></div>
+                    <div class="font-bold">$<?php echo $products[$key]['product_price']; ?></div>
                   </div>
-                  <div class="mt-4">
+                  <form class="mt-4 flex items-center gap-2" action="index.php?action=add&id=<?php echo $products[
+                    $key
+                  ]['product_id']; ?>" method="post">
+                    <div class="hidden sm:relative sm:flex sm:h-min">
+                      <select
+                        class="relative z-10 cursor-pointer appearance-none rounded-lg border bg-transparent py-2 pl-4 pr-8 text-sm focus:outline-none"
+                        name="quantity"
+                      >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+
+                      <svg
+                        class="h-4 w-4 text-slate-500 sm:absolute sm:top-1/2 sm:right-2 sm:-translate-y-1/2"
+                        fill="none"
+                        viewBox="0 0 17 16"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M13.167 6 8.5 10.667 3.833 6"
+                        />
+                      </svg>
+                    </div>
+
                     <button
-                      class="block w-full rounded-lg bg-indigo-600 px-4 py-3 text-white"
-                      type="button"
+                      class="block w-full rounded-lg bg-indigo-600 px-3 py-2 text-sm text-white"
+                      type="submit"
                     >
                       Add to cart
                     </button>
-                  </div>
+                  </form>
                 </div>
-              <?php endfor; ?>
+              <?php endforeach; ?>
+
+              <?php if (isset($_SESSION['user_id'])) {
+                if (!empty($_GET['action'])) {
+                  switch ($_GET['action']) {
+                    case 'add':
+                      $item = $db_handle->run_query(
+                        'SELECT * FROM `products_table` WHERE `product_id` = ' . $_GET['id']
+                      );
+
+                      if ($item) {
+                        $item_id = $item[0]['product_id'];
+                        $item_image = $item[0]['product_image'];
+                        $item_name = $item[0]['product_name'];
+                        $item_color = $item[0]['product_color'];
+                        $item_price = $item[0]['product_price'];
+                        $item_quantity = $_POST['quantity'];
+                        $item_user_id = $_SESSION['user_id'];
+
+                        $check = $db_handle->run_query(
+                          "SELECT * FROM shopping_cart WHERE item_id = $item_id"
+                        );
+
+                        if ($check) {
+                          $db_handle->run_query(
+                            "UPDATE shopping_cart SET item_quantity = item_quantity + $item_quantity WHERE item_id = $item_id"
+                          );
+                        } else {
+                          $db_handle->run_query(
+                            "INSERT INTO shopping_cart (item_id, item_image, item_name, item_color, item_price, item_quantity, item_account_id) VALUES ($item_id, '$item_image', \"$item_name\", '$item_color', $item_price, $item_quantity, $item_user_id)"
+                          );
+                        }
+                      }
+                      break;
+                  }
+                }
+              } ?>
             </div>
           </div>
 
