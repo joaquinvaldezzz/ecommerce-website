@@ -174,6 +174,7 @@
                         $item_color = $item[0]['product_color'];
                         $item_price = $item[0]['product_price'];
                         $item_quantity = $_POST['quantity'];
+                        $item_total = $item_price * $item_quantity;
                         $item_user_id = $_SESSION['user_id'];
 
                         $check = $db_handle->run_query(
@@ -184,9 +185,12 @@
                           $db_handle->run_query(
                             "UPDATE shopping_cart SET item_quantity = item_quantity + $item_quantity WHERE item_id = $item_id"
                           );
+                          $db_handle->run_query(
+                            "UPDATE shopping_cart SET item_total = item_total + $item_total WHERE item_id = $item_id"
+                          );
                         } else {
                           $db_handle->run_query(
-                            "INSERT INTO shopping_cart (item_id, item_image, item_name, item_color, item_price, item_quantity, item_account_id) VALUES ($item_id, '$item_image', \"$item_name\", '$item_color', $item_price, $item_quantity, $item_user_id)"
+                            "INSERT INTO shopping_cart (item_id, item_image, item_name, item_color, item_price, item_quantity, item_total, item_account_id) VALUES ($item_id, '$item_image', \"$item_name\", '$item_color', $item_price, $item_quantity, $item_total, $item_user_id)"
                           );
                         }
                       }
