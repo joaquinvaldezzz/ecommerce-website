@@ -18,6 +18,10 @@
       </svg>
     </button>
 
+    <div>
+      <a class="text-sm" href="/ecommerce-website/">eCommerce Website</a>
+    </div>
+
     <div class="ml-auto flex items-center">
       <?php session_start(); ?>
       <?php if (!isset($_SESSION['first_name'])): ?>
