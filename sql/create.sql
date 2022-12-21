@@ -14,7 +14,8 @@ CREATE TABLE
 
 CREATE TABLE
   shopping_cart (
-    item_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    item_id INT,
     item_image VARCHAR(256),
     item_name VARCHAR(256),
     item_color VARCHAR(256),
@@ -42,7 +43,3 @@ CREATE TABLE
     contact_message VARCHAR(256),
     date_sent DATETIME
   );
-
--- Reset `AUTO_INCREMENT` of `id` in `user_accounts`
-ALTER TABLE
-  user_accounts AUTO_INCREMENT = 1;
