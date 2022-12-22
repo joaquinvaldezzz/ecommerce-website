@@ -8,7 +8,7 @@
     <link rel="icon" href="/ecommerce-website/public/favicon.svg" />
   </head>
 
-  <body>
+  <body class="bg-white text-slate-900 antialiased">
     <?php include 'includes/header.php'; ?>
     <main>
       <section class="min-h-25 bg-about-us bg-cover bg-center bg-no-repeat"></section>
