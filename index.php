@@ -164,7 +164,7 @@
                   switch ($_GET['action']) {
                     case 'add':
                       $item = $db_handle->run_query(
-                        'SELECT * FROM `products_table` WHERE `product_id` = ' . $_GET['id']
+                        'SELECT * FROM products_table WHERE product_id = ' . $_GET['id']
                       );
 
                       if ($item) {

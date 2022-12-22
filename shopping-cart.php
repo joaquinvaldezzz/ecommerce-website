@@ -98,7 +98,7 @@
                     switch ($_GET['action']) {
                       case 'remove':
                         $item = $db_handle->run_query(
-                          'DELETE FROM shopping_cart WHERE `item_id` = ' . $_GET['id']
+                          'DELETE FROM shopping_cart WHERE item_id = ' . $_GET['id']
                         );
                         break;
                     }

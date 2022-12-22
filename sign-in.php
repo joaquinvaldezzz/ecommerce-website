@@ -67,36 +67,35 @@
               <?php
               require 'includes/database.php';
               session_start();
+              ?>
 
-              if (isset($_POST['log-in'])) {
-
+              <?php if (isset($_POST['log-in'])): ?>
+                <?php
                 $email_address = $_POST['email-address'];
                 $password = md5($_POST['password']);
-                $query = "SELECT * FROM `user_accounts` WHERE `email_address` = '$email_address' AND `password` = '$password'";
+                $query = "SELECT * FROM user_accounts WHERE email_address = '$email_address' AND password = '$password'";
                 $login_query = mysqli_query($mysqli, $query);
                 $result = mysqli_fetch_array($login_query);
                 ($result = mysqli_query($mysqli, $query)) or die(mysql_error());
                 ?>
 
-              <?php if (mysqli_num_rows($result) === 1): ?>
-                <?php
-                while ($row = mysqli_fetch_array($result)) {
-                  $first_name = $row['first_name'];
-                  $user_id = $row['id'];
-                }
+                <?php if (mysqli_num_rows($result) === 1): ?>
+                  <?php
+                  while ($row = mysqli_fetch_array($result)) {
+                    $first_name = $row['first_name'];
+                    $user_id = $row['id'];
+                  }
 
-                $_SESSION['first_name'] = $first_name;
-                $_SESSION['user_id'] = $user_id;
-                header('Location: index.php');
-                ?>
-              <?php else: ?>
-                <div class="mt-4 rounded-lg border border-red-300 bg-red-100 p-4 text-sm text-red-500">
-                  <p>Incorrect email address or password.</p>
-                </div>
+                  $_SESSION['first_name'] = $first_name;
+                  $_SESSION['user_id'] = $user_id;
+                  header('Location: index.php');
+                  ?>
+                <?php else: ?>
+                  <div class="mt-4 rounded-lg border border-red-300 bg-red-100 p-4 text-sm text-red-500">
+                    <p>Incorrect email address or password.</p>
+                  </div>
+                <?php endif; ?>
               <?php endif; ?>
-              <?php
-              }
-              ?>
             </p>
           </div>
 

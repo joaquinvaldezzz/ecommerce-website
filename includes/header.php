@@ -54,7 +54,7 @@
 
               $fetch_query = mysqli_query(
                 $mysqli,
-                'SELECT COUNT(`item_id`) as `total` FROM `shopping_cart`'
+                'SELECT COUNT(item_id) as total FROM shopping_cart'
               );
               $fetched_result = mysqli_fetch_array($fetch_query);
 
