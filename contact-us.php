@@ -105,7 +105,7 @@
                   </div>
                 <?php else: ?>
                   <?php
-                  $query = "INSERT INTO `contact_us` (`contact_first_name`, `contact_last_name`, `contact_email`, `contact_message`, `date_sent`) VALUES ('$first_name', '$last_name', '$email_address', '$message', '$date_sent')";
+                  $query = "INSERT INTO contact_us (contact_first_name, contact_last_name, contact_email, contact_message, date_sent) VALUES ('$first_name', '$last_name', '$email_address', '$message', '$date_sent')";
                   $result = mysqli_query($mysqli, $query);
                   ?>
                   <?php if ($result): ?>
