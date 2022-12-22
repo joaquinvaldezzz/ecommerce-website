@@ -20,6 +20,9 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+      lineHeight: {
+        prose: 1.75,
+      },
     },
   },
   plugins: [
