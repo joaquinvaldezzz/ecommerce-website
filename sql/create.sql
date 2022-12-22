@@ -21,6 +21,7 @@ CREATE TABLE
     item_color VARCHAR(256),
     item_price DECIMAL(10, 2),
     item_quantity INT,
+    item_total DECIMAL(10, 2),
     item_account_id INT,
     FOREIGN KEY (item_account_id) REFERENCES user_accounts (id)
   );
